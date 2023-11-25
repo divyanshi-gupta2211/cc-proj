@@ -1,0 +1,39 @@
+<!-- /views/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ... (your existing head content) ... -->
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+
+  <body>
+    <div class="wrapper index-wrapper">
+      <div class="welcome-section">
+        <div class="index-logo"></div>
+        <h2 class="title-header">NOTESHARE</h2>
+      </div>
+      <div class="index-mid">
+        <div class="commands-section">
+          <p class="index-text">
+            NoteShare, designed to facilitate the seamless sharing of text-based
+            content on the internet.
+          </p>
+          <p class="index-text new-text">
+            click on the "New" Button to start noteshare service
+          </p>
+
+          <!-- button -->
+          <div class="index-main-button"><%- include("_buttons.ejs") %></div>
+        </div>
+        <div>
+          <p class="index-text">
+            Enter any URL and unique custom name, then a custom link will be
+            created which when is clicked will redirect to original URL
+          </p>
+        </div>
+        <a href="/url-short" class="shorten-url btn">Shorten URL</a>
+      </div>
+    </div>
+  </body>
+</html>
