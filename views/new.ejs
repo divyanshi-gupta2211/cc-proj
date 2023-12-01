@@ -18,18 +18,25 @@
     <form action="/save" method="POST">
 
       <div class="wrapper">
-        <%- include("_buttons.ejs", { canSave: true }) %>
-        <input
-          type="number"
-          name="customExpiry"
-          class="customTimer"
-          placeholder="Custom Expiry (minutes)"
-          oninput="validateCustomExpiry(this)"
-        />
+        
+       
         <div class="textarea-wrapper">
           <textarea autofocus name="value" class="textArea">
 <%= locals.value %></textarea
           >
+        </div>
+        <input
+          type="number"
+          name="customExpiry"
+          class="customTimer"
+          placeholder="Set a Custom Expiry (min)"
+          oninput="validateCustomExpiry(this)"
+        />
+        <div class="buttons">
+          <a href="/new" class="btn temp-button" style="display: none;"><strong>..NOTE IT HERE !!..</strong></a>
+          
+          <button class="btn" type="submit">Save</button>
+          
         </div>
       </div>
     </form>

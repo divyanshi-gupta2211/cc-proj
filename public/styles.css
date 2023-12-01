@@ -1,14 +1,28 @@
 body {
  
-    background: url("images/bg.svg") no-repeat;
+    background: url("images/gif.gif") no-repeat;
     background-repeat: no-repeat;
     background-size: cover;
     /* Black background */
-    margin: 0;
+    height: 100vh;
+    margin: 50; 
     color: #ffffff;
     /* White text */
     font-family: 'Courier New', monospace;
     /* Choose a monospace font for code display */
+}
+
+h1
+{
+    font-family:'system-ui';
+    color: #fe5959;
+    font-weight: 800;
+    font-size:380% ;
+
+
+}
+.temp-button{
+    display: none;
 }
 .shorten-url-body{
     background: url("images/bg.svg") no-repeat;
@@ -25,7 +39,7 @@ body {
     padding: 1rem 0.5rem;
     margin-top: 0;
     font-size: 1rem;
-    color: #ffffff;
+    color: #f1eded;
     align-self: center;
     text-align: center;
     /* align-items: center; */
@@ -53,11 +67,14 @@ body {
     font-style:"font-family: 'Balsamiq Sans', cursive;";
     font-size: larger;
     color: rgb(255, 255, 255);
+    margin-top: 180px;
     text-shadow: .5px .5px   rgb(5, 5, 5);
     
 }
 .new-text{
-    color: #1c7933;
+    color: #f6f9f4;
+    font-family:'system-ui' ;
+    font-size:150% ;
 }
 
 .index-mid{
@@ -91,12 +108,15 @@ body {
 }
 .textArea{
     display: inline-flex;
-    background-color: #4d6948; 
+    /* background-color: #6f716e;  */
+    background-color: rgb(191, 192, 218);
+    font-size: large;
     border-radius: 20px;
     width: 60%;
     height: 220px;
     border: 10px ;
     padding: 15px;
+    margin-top: 10%;
 }
 .count{
     font-style:"font-family: 'Balsamiq Sans', cursive;";
@@ -155,6 +175,7 @@ textarea {
     resize: none;
     width: 100%;
     padding: 0;
+    color: rgb(26, 21, 21);
     margin-left: 1rem;
     /* color: #ffffff; */
   margin-top: 5px;
@@ -184,7 +205,7 @@ textarea {
     display: inline-flex;
     align-items: center;
     width: 180px;
-    margin-top: 5px;
+    margin-top: 50px;
     align-items: center;
     width: 180px;
 }
@@ -243,14 +264,16 @@ textarea {
 
 .btn {
     cursor: pointer;
-    background: rgb(13, 107, 4);
+    background: #1e1c1c;
+    /* background: #ffffff; */
+    font-family: "system-ui";
     box-shadow: 1px 1px;
     border: 2px solid #ffffff;
     align-self: center;
     /* White border color */
-    color: #ffffff;
-    /* margin-top: 5%; */
-    border-radius: .25rem;
+    color: #f9f6f6;
+    margin-top: 20px;
+    border-radius: 1.25rem;
     padding: 1.25rem 1.5rem;
     width: fit-content;
     /* Adjust the padding as needed for a smaller button */
@@ -258,25 +281,51 @@ textarea {
     /* Adjust the font size as needed */
     transition: background-color 200ms ease-in-out;
     display: inline-block;
-    text-decoration: none;
+    text-decoration:double; 
+    /* font-weight:600; */
 }
 
 .btn:hover {
-    background-color: #333333;
+    background-color: rgb(43, 39, 48);
     /* Darker background on hover */
     color: #ffffff;
 }
 
 .shorten-url {
-   opacity: 0.9; 
+   /* opacity: 0.9; 
     transition: opacity 200ms ease-in-out;
     background-color: rgb(61, 136, 54);
-    /* Dark background for the buttons wrapper */
     box-shadow: 3px 5px;
-    padding: 1rem;
+    padding: 1rem; */
+
+    cursor: pointer;
+    background: #1e1c1c;
+    box-shadow: 1px 1px;
+    border: 2px solid #ffffff;
+    align-self: center;
+    font-family: "system-ui";
+    /* White border color */
+    color: #d9d7d7;
+    margin-top: 20px;
+    border-radius: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    width: fit-content;
+    /* Adjust the padding as needed for a smaller button */
+    font-size: 1rem;
+    /* Adjust the font size as needed */
+    transition: background-color 200ms ease-in-out;
+    display: inline-block;
+    text-decoration:double; 
+    /* font-weight:600; */
+
+
 }
 
 .shorten-url:hover {
-    background-color: rgb(13, 107, 4);
-    opacity: 1;
+   
+ /* background-color: rgb(13, 107, 4);
+    opacity: 1; */
+    background-color: rgb(43, 39, 48);
+    /* Darker background on hover */
+    color: #ffffff;
 }
