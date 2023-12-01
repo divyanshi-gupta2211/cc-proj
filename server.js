@@ -14,7 +14,7 @@ const BASE_URL = process.env.BASE_URL || "http://localhost:3000";
 var longURL;
 var error = "Server Error!! Please Try Again Later.";
 
-mongoose.connect("mongodb+srv://Nitesh:12345@cluster0.3n3ihxh.mongodb.net/", {
+mongoose.connect("mongodb+srv://divyanshigupta2211:divya2211@cluster0.h0vxf9m.mongodb.net/?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -66,24 +66,6 @@ app.post("/save", async (req, res) => {
   }
 });
 
-app.post("/api/generate-url", async (req, res) => {
-  console.log("Received request body:", req.body);
-
-  try {
-    if (!req.body || !req.body.value) {
-      throw new Error("Value is missing in the request body");
-    }
-
-    const document = await Document.create({ value: req.body.value });
-    const normalURL = `/documents/${document.id}`;
-    const fullURL = `${BASE_URL}${normalURL}`;
-
-    res.json({ id: document.id, fullURL });
-  } catch (e) {
-    console.error("Error creating document:", e.message);
-    res.status(500).json({ error: "An error occurred. Please try again." });
-  }
-});
 
 app.get("/:id/duplicate", async (req, res) => {
   const id = req.params.id;
@@ -121,7 +103,7 @@ app.post("/url-short", async (req, res) => {
       console.log("New URL saved:", newURL);
       displayShortURL(req, res, newURL);
     } else {
-      console.log("URL already exists in the database:", existingURL);
+      console.log("URL already in use", existingURL);
 
       // Use existing shortID consistently
       existingURL.shortID = customAlias;
@@ -220,7 +202,7 @@ app.get("/shorten-url/:id", async (req, res) => {
       const document = await Document.findById(id);
 
       if (document) {
-        // Retrieve the Referer header to get the URL of the previous page
+  
         const longURL = req.headers.referer || "";
         console.log(longURL);
         res.render("shorten-url", {
@@ -246,7 +228,6 @@ app.get("/shorten-url/:id", async (req, res) => {
   }
 });
 
-// Update the /shorten-url/:id endpoint
 app.post("/shorten-url/:id", async (req, res) => {
   const { id } = req.params;
   const { customAlias } = req.body;
@@ -261,7 +242,6 @@ app.post("/shorten-url/:id", async (req, res) => {
       document.shortURL = newShortURL;
       await document.save();
 
-      // Render the same page with the updated short URL
       res.render("shorten-url", {
         longURL: document.longURL,
         id,
