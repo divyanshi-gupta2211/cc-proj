@@ -34,16 +34,15 @@
       />
     </head>
 
-    <body style="background-image:url('../images/bg.svg'); background-repeat: no-repeat;
+    <body style="background-image:url('../images/gif.gif'); background-repeat: no-repeat;
     background-size: cover;">
     <div class="my-5 container text-center">
-      <h1>URL Shortener</h1>
-      <div> <p>Enter any URL and unique custom name,
-        then a custom link will be created which when is clicked will redirect to original URL</p></div>
+      <h1 style="color: aliceblue;">Short my URL</h1>
+      
       <div class="my-5 text-center">
         <form action="/url-short" method="post">
           <div class="row text-center d-flex justify-content-center">
-            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 col-8">
+            <div class="col-lg-7 col-md-8 col-sm-8 col-xs-8 col-8">
               <input
                 class="form-control form-control-lg"
                 name="longURL"
@@ -54,12 +53,12 @@
                 required
               />
             </div>
-            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 col-8 my-2">
+            <div class="col-lg-7 col-md-8 col-sm-8 col-xs-8 col-8 my-2">
               <input
                 class="form-control form-control-lg customAlias"
                 name="customAlias"
                 type="text"
-                placeholder="Custom Alias (Optional)"
+                placeholder="Custom"
                 autocomplete="off"
               />
             </div>
@@ -75,7 +74,7 @@
       <div>
         <p
           class="mx-auto pt-2 w-50 bg-transparent"
-          style="height: 60px; font-size: 30px"
+          style="height: 60px; font-size: 30px;color: aliceblue; "  
         >
           Shorten URL:
           <a href="/<%= newURL.shortID %>" target="_blank">

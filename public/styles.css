@@ -39,7 +39,7 @@ h1
     padding: 1rem 0.5rem;
     margin-top: 0;
     font-size: 1rem;
-    color: #f1eded;
+    /* color: #f1eded; */
     align-self: center;
     text-align: center;
     /* align-items: center; */
@@ -292,11 +292,11 @@ textarea {
 }
 
 .shorten-url {
-   /* opacity: 0.9; 
+   opacity: 0.9; 
     transition: opacity 200ms ease-in-out;
     background-color: rgb(61, 136, 54);
     box-shadow: 3px 5px;
-    padding: 1rem; */
+    padding: 1rem;
 
     cursor: pointer;
     background: #1e1c1c;
